@@ -1,23 +1,30 @@
 <template>
   <section class="container">
-    <top :title='title'/>
-    <pageContent />
+    <top :title='title'
+    @click.stop.native='showContent = true'
+    />
+    <pageContent v-if='showContent' />
   </section>
 </template>
 
 <script>
-import top from '~/components/top'
-import pageContent from '~/components/pageContent'
+// 动态组件 code split
+const components = {
+  top: () => import('@/components/top.vue'),
+  pageContent: () => import('@/components/pageContent.vue'),
+}
 import axios from 'axios'
 import { mapState } from 'vuex'
 export default {
-  components: {
-    top,
-    pageContent
-  },
+  components,
   computed: mapState([
     'testData'
   ]),
+  data () {
+    return {
+      showContent: false
+    }
+  },
   async fetch ({ store, params }) {
     let { data } = await axios.get(`http://suggest.taobao.com/sug?code=utf-8&q=商品关键字`)
     store.commit('setTestData', data)
@@ -32,7 +39,7 @@ export default {
   },
   async asyncData ({ params }) {
     let data = await axios.get(`http://suggest.taobao.com/sug?code=utf-8&q=商品关键字`)
-    return { title: '头部'}
+    return { title: '点击显示下面的内容'}
   }
 }
 </script>

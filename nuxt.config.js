@@ -26,7 +26,8 @@ module.exports = {
     ssr: true,
   }],
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    '~/css/main.css'
   ],  
   /*
   ** Build configuration
