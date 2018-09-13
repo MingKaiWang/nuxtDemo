@@ -17,6 +17,17 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
+  // router
+  router: {
+    middleware: ['b', 'a']
+  },
+  plugins: [{
+    src: '~plugins/ElementUI',
+    ssr: true,
+  }],
+  css: [
+    'element-ui/lib/theme-chalk/index.css'
+  ],  
   /*
   ** Build configuration
   */

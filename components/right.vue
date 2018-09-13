@@ -1,5 +1,5 @@
 <template>
-  <div class='top'>头部</div>
+  <div class='right'>右侧</div>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
 </script>
 
 <style lang='less' scoped>
-  .top {
-    background: red;
+  .right {
+    flex: 1;
   }
 </style>
