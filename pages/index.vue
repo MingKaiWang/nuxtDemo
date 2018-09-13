@@ -26,8 +26,8 @@ export default {
     }
   },
   async fetch ({ store, params }) {
-    let { data } = await axios.get(`http://suggest.taobao.com/sug?code=utf-8&q=商品关键字`)
-    store.commit('setTestData', data)
+    // let { data } = await axios.get(`http://suggest.taobao.com/sug?code=utf-8&q=商品关键字`)
+    // store.commit('setTestData', data)
   },
   head () {
     return {
@@ -38,7 +38,7 @@ export default {
     }
   },
   async asyncData ({ params }) {
-    let data = await axios.get(`http://suggest.taobao.com/sug?code=utf-8&q=商品关键字`)
+    // let data = await axios.get(`http://suggest.taobao.com/sug?code=utf-8&q=商品关键字`)
     return { title: '点击显示下面的内容'}
   }
 }

@@ -1,11 +1,21 @@
 <template>
-  <div class='top'>{{title}}</div>
+  <div class='top'>
+    <el-button  type='primary'>
+      <nuxt-link :to="'/' + query">返回主页</nuxt-link>
+    </el-button>
+    {{title}}
+  </div>
 </template>
 
 <script>
 export default {
   props: {
     title: String
+  },
+  computed: {
+    query () {
+      return `?id=${this.$route.query.id}`
+    }
   }
 }
 </script>

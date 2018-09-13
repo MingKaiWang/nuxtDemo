@@ -1,7 +1,7 @@
 <template>
   <div>
     <top />
-    pageOne
+    pageTwo
   </div>
 </template>
 

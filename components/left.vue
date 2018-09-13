@@ -7,7 +7,7 @@
         :key='i'
         :index="name">
         <i class="el-icon-menu"></i>
-        <span slot="title"><nuxt-link :to="name">跳转到{{name}}</nuxt-link></span>
+        <span slot="title"><nuxt-link :to="name + query">跳转到{{name}}</nuxt-link></span>
       </el-menu-item>
     </el-menu>
   </div>
@@ -22,6 +22,11 @@ export default {
         'pageTwo',
         'pageThree'
       ]
+    }
+  },
+  computed: {
+    query () {
+      return `?id=${this.$route.query.id}`
     }
   }
 }
