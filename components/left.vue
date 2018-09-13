@@ -1,13 +1,13 @@
 <template>
   <div class='left'>
     <el-menu
-      default-active="pageOne"
+      default-active=""
       class="el-menu-vertical-demo">
       <el-menu-item v-for='(name, i) in list'
         :key='i'
         :index="name">
         <i class="el-icon-menu"></i>
-        <span slot="title"><nuxt-link :to="name">{{name}}</nuxt-link></span>
+        <span slot="title"><nuxt-link :to="name">跳转到{{name}}</nuxt-link></span>
       </el-menu-item>
     </el-menu>
   </div>

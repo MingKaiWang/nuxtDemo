@@ -19,7 +19,7 @@ module.exports = {
   loading: { color: '#3B8070' },
   // router
   router: {
-    middleware: ['b', 'a']
+    middleware: ['a', 'b']
   },
   plugins: [{
     src: '~plugins/ElementUI',
