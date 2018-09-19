@@ -25,7 +25,15 @@ export default {
       showContent: false
     }
   },
+  // beforecreate created 在b、s端均被调用
+  beforeCreate () {
+    console.log('beforeCreate')
+  },
+  created () {
+    console.log('create')
+  },
   async fetch ({ store, params }) {
+    console.log('ft')
     // let { data } = await axios.get(`http://suggest.taobao.com/sug?code=utf-8&q=商品关键字`)
     // store.commit('setTestData', data)
   },
@@ -38,6 +46,7 @@ export default {
     }
   },
   async asyncData ({ params }) {
+    console.log('async')
     // let data = await axios.get(`http://suggest.taobao.com/sug?code=utf-8&q=商品关键字`)
     return { title: '点击显示下面的内容'}
   }
