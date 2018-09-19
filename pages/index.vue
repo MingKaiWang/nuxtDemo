@@ -34,8 +34,9 @@ export default {
   },
   async fetch ({ store, params }) {
     console.log('ft')
-    // let { data } = await axios.get(`http://suggest.taobao.com/sug?code=utf-8&q=商品关键字`)
-    // store.commit('setTestData', data)
+    let { data } = await axios.get(`http://suggest.taobao.com/sug?code=utf-8&q=商品关键字`)
+    console.log(data)
+    store.commit('setTestData', data)
   },
   head () {
     return {
